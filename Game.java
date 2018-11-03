@@ -6,6 +6,8 @@ public class Game {
 
     private static boolean isRunning = true;
     public static JFrame mainWindow;
+    public static DrawPanel panel;
+    public static Container pane;
 
     public static void load() {
         mainWindow = new JFrame();
@@ -16,8 +18,8 @@ public class Game {
         mainWindow.setExtendedState(JFrame.MAXIMIZED_BOTH); 
         //frame.setUndecorated(true);
 
-        DrawPanel panel = new DrawPanel(Color.white);
-        Container pane = mainWindow.getContentPane();
+        panel = new DrawPanel(Color.white);
+        pane = mainWindow.getContentPane();
         pane.add(panel);
 
         mainWindow.setVisible(true);
@@ -30,6 +32,8 @@ public class Game {
         final double TARGET_FPS = 1 / 60;
         double accumulatedTime = 0;
 
+        Block test = new Block();
+
         while (isRunning) {
             double delta = System.nanoTime() - lastLoopTime;
             lastLoopTime = System.nanoTime();
@@ -40,7 +44,7 @@ public class Game {
                 accumulatedTime -= TARGET_FPS;
 
                 //Updates
-                
+                test.draw(new JPanel().paintComponents(g));
             }
         }
     }

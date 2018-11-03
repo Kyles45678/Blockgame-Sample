@@ -13,6 +13,6 @@ public class DrawPanel extends JPanel {
 
         g.setColor(Color.blue);
         g.drawRect(10, 5, 120, 20);
-      
     }
+
 }
