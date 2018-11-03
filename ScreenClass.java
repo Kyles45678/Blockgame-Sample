@@ -1,5 +1,5 @@
 public class ScreenClass {
-    private Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+    private static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
     public static int getMidX() {
         return screenSize.getWidth() / 2;
