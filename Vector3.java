@@ -32,5 +32,9 @@ public class Vector3 {
     public int getZ() {
         return z;
     }
+
+    public String toString() {
+        return x + " - " + y + " - " + " - " + z;
+    }
     //Setters
 }

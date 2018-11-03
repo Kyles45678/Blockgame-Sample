@@ -56,14 +56,42 @@ public class Block {
             int y = myVec.getY();
             int z = myVec.getZ();
 
-            //z = z + 5;
+            z = z + 5;
 
-            int f = (int) (100 / z);
+            int f = (int) (500 / z);
             x *= f;
             y *= f;
 
-            g.drawOval(x + ScreenClass.getMidX(), y + ScreenClass.getMidY(), 5, 5);
+            g.drawOval(x + 500, y + 500, 10, 10);
             //g.drawOval(x + ScreenClass.getMidX(), y + ScreenClass.getMidY(), 5, 5);
         }
+
+        
+        for (int i = 0; i < 12; i++) {
+            Vector2 edgeVec2 = edges[i];  //Vec(0, 1)
+
+            Vector2 points[] = new Vector2[2]; 
+            Vector3 twoVerts[] = {verticies[edgeVec2.getX()], verticies[edgeVec2.getY()]}; //
+
+            for (int b = 0; b < 2; b++) {
+                Vector3 vec3 = twoVerts[b];
+
+                int x = vec3.getX();
+                int y = vec3.getY();
+                int z = vec3.getZ();
+
+                z = z + 5;
+
+                int f = (int) (500 / z);
+                x *= f;
+                y *= f;
+
+                points[b] = new Vector2(x + 500, y + 500);
+            }
+
+            g.drawLine(points[0].getX(), points[0].getY(), points[1].getX(), points[1].getY());
+        }
+        
+		//love.graphics.line(points[1].x, points[1].y, points[2].x, points[2].y)
     }
 }
