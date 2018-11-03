@@ -32,8 +32,6 @@ public class Game {
         final double TARGET_FPS = 1 / 60;
         double accumulatedTime = 0;
 
-        Block test = new Block();
-
         while (isRunning) {
             double delta = System.nanoTime() - lastLoopTime;
             lastLoopTime = System.nanoTime();
@@ -44,7 +42,6 @@ public class Game {
                 accumulatedTime -= TARGET_FPS;
 
                 //Updates
-                test.draw(new JPanel().paintComponents(g));
             }
         }
     }

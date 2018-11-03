@@ -7,7 +7,7 @@ public class Block {
     private Vector3 Position;
     private Vector3 Size;
 
-    private Vector3[] verticies = {
+    private Vector3 verticies[] = {
         new Vector3(-1, 1, 1),
         new Vector3(1, 1, 1),
         new Vector3(1, -1, 1),
@@ -18,7 +18,7 @@ public class Block {
         new Vector3(-1, -1, -1)
     };
 
-    private Vector2[] edges = {
+    private Vector2 edges[] = {
         new Vector2(0, 1),
         new Vector2(1, 2),
         new Vector2(2, 3),
@@ -34,7 +34,8 @@ public class Block {
     };
 
     public Block() {
-
+        this.Position = new Vector3();
+        this.Size = new Vector3();
     }
 
     public Block(Vector3 positon, Vector3 size) {
@@ -46,9 +47,7 @@ public class Block {
 
     }
 
-    public void display() {
-
-        Graphics g = new Graphics();
+    public void display(Graphics g) {
 
         for (int i = 0; i <= 7; i++) {
             Vector3 myVec = verticies[i];
@@ -59,11 +58,11 @@ public class Block {
 
             //z = z + 5;
 
-            int f = (int) (200 / z);
+            int f = (int) (100 / z);
             x *= f;
             y *= f;
 
-            g.drawOval(x + 500, y + 500, 5, 5);
+            g.drawOval(x + ScreenClass.getMidX(), y + ScreenClass.getMidY(), 5, 5);
             //g.drawOval(x + ScreenClass.getMidX(), y + ScreenClass.getMidY(), 5, 5);
         }
     }
