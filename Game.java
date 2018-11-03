@@ -5,9 +5,10 @@ import java.awt.*;
 public class Game {
 
     private static boolean isRunning = true;
+    public static JFrame mainWindow;
 
     public static void load() {
-        JFrame mainWindow = new JFrame();
+        mainWindow = new JFrame();
 
         mainWindow.setTitle("Ocampo Craft");
         mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -39,7 +40,7 @@ public class Game {
                 accumulatedTime -= TARGET_FPS;
 
                 //Updates
-                System.out.println("Hello");
+                
             }
         }
     }
